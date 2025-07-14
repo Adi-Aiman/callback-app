@@ -41,6 +41,11 @@ def get_users():
 
     return jsonify(songs)
 
+@app.route('/', methods=['GET'])
+def home():
+
+    return jsonify(status_code="200",msg="ok")
+
 if __name__ == '__main__':
     init_db()
     app.run(debug=True)
