@@ -1,5 +1,13 @@
 from flask import Flask, request, jsonify
 import sqlite3
+import logging
+
+# Configure logging to output to console
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(levelname)s - %(message)s'
+)
+
 
 app = Flask(__name__)
 DATABASE = 'songs.db'
@@ -43,6 +51,15 @@ def get_users():
 
 @app.route('/', methods=['GET'])
 def home():
+
+    return jsonify(status_code="200",msg="ok")
+
+@app.route('/callback', methods=['POST'])
+def callback():
+    data = request.get_json()
+    logging.info(data)
+    #title = data.get('title')
+    #url = data.get('url')
 
     return jsonify(status_code="200",msg="ok")
 

@@ -1,6 +1,6 @@
 
 
-#docker build -t flask-gunicorn-app .
+#docker build -t mp250500429/flask-gunicorn-app .
 #docker run --name my_flask -p 8000:8000 flask-gunicorn-app
 # add -d to run as daemon an use
 #docker logs <container_id> for logs
